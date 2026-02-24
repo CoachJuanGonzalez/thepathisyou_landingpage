@@ -20,10 +20,12 @@ const stickyCta = document.getElementById('sticky-cta');
 const emailInput = document.getElementById('email');
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
+const commitmentInput = document.getElementById('commitment');
 
 // Error messages
 const emailError = document.getElementById('email-error');
 const firstNameError = document.getElementById('firstName-error');
+const commitmentError = document.getElementById('commitment-error');
 
 // ========================================
 // VALIDATION FUNCTIONS
@@ -77,7 +79,31 @@ function validateForm() {
         hideError(firstNameInput, firstNameError);
     }
 
+    // Validate commitment checkbox
+    if (!commitmentInput.checked) {
+        showError(commitmentInput, commitmentError, 'Please confirm your commitment to share feedback');
+        isValid = false;
+    } else {
+        hideError(commitmentInput, commitmentError);
+    }
+
     return isValid;
+}
+
+// Check if all required fields are filled to enable/disable button
+function checkFormCompletion() {
+    const emailFilled = emailInput.value.trim().length > 0;
+    const firstNameFilled = firstNameInput.value.trim().length > 0;
+    const commitmentChecked = commitmentInput.checked;
+
+    // Enable button only if all required fields are filled
+    if (emailFilled && firstNameFilled && commitmentChecked) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('disabled');
+    } else {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('disabled');
+    }
 }
 
 // Real-time validation
@@ -99,9 +125,21 @@ firstNameInput.addEventListener('blur', () => {
     }
 });
 
-// Clear errors on input
-emailInput.addEventListener('input', () => hideError(emailInput, emailError));
-firstNameInput.addEventListener('input', () => hideError(firstNameInput, firstNameError));
+// Clear errors on input and check form completion
+emailInput.addEventListener('input', () => {
+    hideError(emailInput, emailError);
+    checkFormCompletion();
+});
+
+firstNameInput.addEventListener('input', () => {
+    hideError(firstNameInput, firstNameError);
+    checkFormCompletion();
+});
+
+commitmentInput.addEventListener('change', () => {
+    hideError(commitmentInput, commitmentError);
+    checkFormCompletion();
+});
 
 // ========================================
 // FORM SUBMISSION
@@ -147,6 +185,7 @@ form.addEventListener('submit', async (e) => {
         email: emailInput.value.trim(),
         firstName: firstNameInput.value.trim(),
         lastName: lastNameInput.value.trim() || '', // Optional field
+        commitment: commitmentInput.checked, // Mandatory checkbox
         source: CONFIG.source,
         timestamp: new Date().toISOString(),
         website: document.getElementById('website').value // Honeypot field

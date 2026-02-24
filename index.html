@@ -155,6 +155,25 @@
                         </div>
                     </div>
 
+                    <!-- Commitment Checkbox -->
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                id="commitment"
+                                name="commitment"
+                                required
+                                aria-required="true"
+                                class="checkbox-input"
+                            >
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                I'm receiving this early and free, and I'm open to sharing a genuine reflection on how it lands for me.
+                            </span>
+                        </label>
+                        <span class="error-message" id="commitment-error" role="alert"></span>
+                    </div>
+
                     <!-- Honeypot field for bot detection (hidden from humans) -->
                     <div class="honeypot" aria-hidden="true">
                         <label for="website">Website</label>
@@ -167,7 +186,7 @@
                         >
                     </div>
 
-                    <button type="submit" class="cta-button" id="submit-btn">
+                    <button type="submit" class="cta-button" id="submit-btn" disabled>
                         <span class="btn-text">SEND ME THE AUDIOBOOK</span>
                         <span class="btn-loader"></span>
                     </button>

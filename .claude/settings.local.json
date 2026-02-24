@@ -7,7 +7,8 @@
       "Bash(git branch:*)",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(a genuine reflection on how it lands for me.\"\n- Custom checkbox design with gold border and purple-gold gradient fill\n- Smooth animations and hover effects\n- Positioned between last name and CTA button\n\nSMART CTA BUTTON LOGIC:\n- Button starts in disabled state \\(grayed out\\)\n- Only activates when ALL required fields are filled:\n  ✓ Email address \\(valid format\\)\n  ✓ First name \\(minimum 2 characters\\)\n  ✓ Commitment checkbox \\(checked\\)\n- Real-time validation on every input change\n- Visual feedback: disabled = gray, enabled = purple gradient\n- Cannot submit without checkbox checked\n\nVALIDATION:\n- Client-side: Button disabled until all required fields complete\n- Server-side: API validates commitment = true before accepting\n- Error messages for missing checkbox\n- Smooth UX with instant feedback\n\nAIRTABLE INTEGRATION:\n- New field: ''commitment'' \\(stores \"Yes\" or \"No\"\\)\n- Required field validation on API\n- Sent with all form submissions\n\nSTYLING:\n- Custom checkbox matches form design language\n- Gold border, white background\n- Purple-gold gradient when checked\n- Checkmark icon animation\n- Hover effects on label and checkbox\n- Focus states for accessibility\n- Mobile responsive\n\nACCESSIBILITY:\n- ARIA required attribute\n- Keyboard navigable\n- Focus visible states\n- Screen reader friendly labels\n- Error announcements\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
