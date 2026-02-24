@@ -1232,6 +1232,10 @@ body {
 /* iPad / Tablets (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .hero {
+        align-items: flex-start;
+        padding-top: 80px;
+    }
+    .hero {
         height: 80vh;
     }
 
@@ -1263,6 +1267,8 @@ body {
     .hero {
         height: 70vh;
         background-attachment: scroll;
+        align-items: flex-start;
+        padding-top: 60px;
     }
 
     .hero-title {
@@ -1328,6 +1334,8 @@ body {
     .hero {
         height: 100vh;
         min-height: 600px;
+        align-items: flex-start;
+        padding-top: 60px;
     }
 
     .hero-content {
