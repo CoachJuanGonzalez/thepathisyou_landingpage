@@ -1323,6 +1323,10 @@ body {
         height: 200px;
     }
 
+    .footer {
+        padding-bottom: 100px; /* Add extra padding to prevent sticky CTA from hiding footer */
+    }
+
     .footer-content {
         gap: var(--spacing-sm);
     }
@@ -1499,6 +1503,7 @@ body {
 
     .footer {
         padding: var(--spacing-lg) 0;
+        padding-bottom: 100px; /* Add extra padding to prevent sticky CTA from hiding footer */
     }
 
     .footer-copyright,
