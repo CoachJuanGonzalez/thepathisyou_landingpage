@@ -633,19 +633,20 @@ body {
     justify-content: center;
 }
 
-.author-placeholder {
-    width: 200px;
-    height: 200px;
+.author-photo {
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-purple-primary), var(--color-gold-primary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: var(--font-serif);
-    border: 4px solid var(--color-gold-primary);
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid var(--color-gold-primary);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.author-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(212, 175, 55, 0.5);
 }
 
 .author-title {
