@@ -24,7 +24,6 @@
 
     /* Typography */
     --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Montserrat', sans-serif;
     --font-display: 'Cinzel', serif;
 
     /* Spacing */
@@ -45,7 +44,7 @@ html {
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     color: var(--color-white);
     background-color: var(--color-black-primary);
     line-height: 1.6;
@@ -274,6 +273,79 @@ body {
 }
 
 /* ========================================
+   BOOK COVER SHOWCASE
+   ======================================== */
+
+.book-showcase {
+    padding: calc(var(--spacing-xxl) * 1.5) 0;
+    background: linear-gradient(180deg, var(--color-black-primary) 0%, var(--color-black-secondary) 50%, var(--color-black-primary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-showcase::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.book-image-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-cover-image {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 80px rgba(212, 175, 55, 0.3);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-cover-image:hover {
+    transform: scale(1.02);
+}
+
+.book-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+/* ========================================
    ABOUT THE BOOK SECTION
    ======================================== */
 
@@ -355,7 +427,7 @@ body {
 }
 
 .myths-intro {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-white);
@@ -425,7 +497,7 @@ body {
 }
 
 .core-truth {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 600;
     color: var(--color-white);
@@ -582,7 +654,7 @@ body {
     width: 100%;
     padding: 1rem 1rem 1rem 3rem;
     font-size: 1rem;
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     color: var(--color-black-primary);
     background: var(--color-white);
     border: 2px solid transparent;
@@ -1294,6 +1366,14 @@ body {
     .arrow-icon {
         width: 16px;
         height: 16px;
+    }
+
+    .book-showcase {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .book-cover-image {
+        max-width: 320px;
     }
 
     .about-section {
