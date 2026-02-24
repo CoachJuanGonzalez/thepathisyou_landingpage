@@ -148,7 +148,8 @@ form.addEventListener('submit', async (e) => {
         firstName: firstNameInput.value.trim(),
         lastName: lastNameInput.value.trim() || '', // Optional field
         source: CONFIG.source,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        website: document.getElementById('website').value // Honeypot field
     };
 
     // Submit to Airtable

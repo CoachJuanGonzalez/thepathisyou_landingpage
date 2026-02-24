@@ -428,6 +428,16 @@ body {
     display: block;
 }
 
+/* Honeypot field - hidden from users, visible to bots */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .cta-button {
     position: relative;
     width: 100%;

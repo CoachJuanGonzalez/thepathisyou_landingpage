@@ -203,6 +203,48 @@
         </div>
     </section>
 
+    <!-- Social Proof Section -->
+    <section class="social-proof-section">
+        <div class="container">
+            <h2 class="section-title">Transforming Lives</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"This audiobook changed how I see myself. Juan's insights are profound yet practical. I've listened three times already."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <p class="author-name">Sarah M.</p>
+                            <p class="author-location">Vancouver, BC</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Finally, a self-help book that doesn't feel preachy. Juan speaks directly to your soul with authenticity and wisdom."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div>
+                            <p class="author-name">David K.</p>
+                            <p class="author-location">Toronto, ON</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I was skeptical at first, but this audiobook met me exactly where I was. The transformation has been incredible."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <p class="author-name">Maria R.</p>
+                            <p class="author-location">Montreal, QC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Author Section -->
     <section class="author-section">
         <div class="container">
