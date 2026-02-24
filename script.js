@@ -282,6 +282,44 @@ document.querySelectorAll('.benefit-card, .testimonial-card').forEach(card => {
 });
 
 // ========================================
+// PRIVACY POLICY MODAL
+// ========================================
+
+const privacyModal = document.getElementById('privacy-modal');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalClose = document.getElementById('modal-close');
+const privacyLinks = document.querySelectorAll('a[href="#privacy"]');
+
+function openPrivacyModal(e) {
+    e.preventDefault();
+    privacyModal.classList.add('active');
+    privacyModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closePrivacyModal() {
+    privacyModal.classList.remove('active');
+    privacyModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Event listeners for opening modal
+privacyLinks.forEach(link => {
+    link.addEventListener('click', openPrivacyModal);
+});
+
+// Event listeners for closing modal
+modalClose.addEventListener('click', closePrivacyModal);
+modalOverlay.addEventListener('click', closePrivacyModal);
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && privacyModal.classList.contains('active')) {
+        closePrivacyModal();
+    }
+});
+
+// ========================================
 // ACCESSIBILITY ENHANCEMENTS
 // ========================================
 
