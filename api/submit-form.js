@@ -15,12 +15,10 @@ async function submitToAirtable(data, apiKey, baseId, tableName) {
         },
         body: JSON.stringify({
             fields: {
-                'Email': data.email,
-                'First Name': data.firstName,
-                'Last Name': data.lastName || '',
-                'Source': data.source,
-                'Submitted At': data.timestamp,
-                'Status': 'New Lead'
+                'email': data.email,
+                'first_name': data.firstName,
+                'last_name': data.lastName || '',
+                'source': data.source
             }
         })
     });
