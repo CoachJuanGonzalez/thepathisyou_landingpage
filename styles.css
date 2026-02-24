@@ -891,7 +891,65 @@ body {
    RESPONSIVE DESIGN
    ======================================== */
 
-@media (max-width: 768px) {
+/* Large Desktop (1920px+) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-title {
+        font-size: 5.5rem;
+    }
+
+    .description-line {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop (1024px - 1919px) - Default styles apply */
+
+/* iPad Pro / Large Tablets (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .download-card {
+        max-width: 600px;
+    }
+}
+
+/* iPad / Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .description-line {
+        font-size: 1.25rem;
+    }
+
+    .download-card {
+        max-width: 550px;
+        padding: var(--spacing-xl);
+    }
+
+    .author-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .sticky-cta {
+        display: none; /* Hide on tablets */
+    }
+}
+
+/* Mobile Landscape / Small Tablets (481px - 767px) */
+@media (max-width: 767px) {
     .hero {
         height: 70vh;
         background-attachment: scroll;
@@ -899,34 +957,206 @@ body {
 
     .hero-title {
         font-size: 2.5rem;
+        margin-bottom: var(--spacing-sm);
     }
 
     .hero-description {
         padding: 0 var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
     }
 
     .description-line {
         font-size: 1.125rem;
+        line-height: 1.7;
+    }
+
+    .description-divider {
+        width: 60px;
+        margin: var(--spacing-md) auto;
+    }
+
+    .cta-button-hero {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
     }
 
     .download-card {
         padding: var(--spacing-lg);
+        border-radius: 12px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-title .highlight {
+        font-size: 1.75rem;
     }
 
     .author-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: var(--spacing-lg);
+    }
+
+    .author-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .footer-content {
+        gap: var(--spacing-sm);
+    }
+
+    .sticky-cta.visible {
+        display: flex;
     }
 }
 
+/* Mobile Portrait (320px - 480px) */
 @media (max-width: 480px) {
+    .hero {
+        height: 100vh;
+        min-height: 600px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-sm);
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        letter-spacing: 0.05em;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .description-line {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+
+    .description-divider {
+        width: 50px;
+        margin: var(--spacing-sm) auto;
+    }
+
     .cta-button-hero {
-        padding: 0.875rem 1.75rem;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.8rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .arrow-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .download-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .download-card {
+        padding: var(--spacing-md);
+        margin: 0 var(--spacing-sm);
+    }
+
+    .card-eyebrow {
+        font-size: 0.75rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-title .highlight {
+        font-size: 1.5rem;
+    }
+
+    .form-intro p {
+        font-size: 0.9rem;
+    }
+
+    .input-wrapper input {
+        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+        font-size: 0.9rem;
+    }
+
+    .checkbox-text {
         font-size: 0.875rem;
     }
 
-    .section-title {
+    .cta-button {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .author-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .author-title {
+        font-size: 1.5rem;
+    }
+
+    .author-description {
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: var(--spacing-lg);
+        max-height: 90vh;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .footer-copyright,
+    .footer-tagline {
+        font-size: 0.8rem;
+    }
+
+    .sticky-cta-text {
+        font-size: 0.75rem;
+    }
+
+    .sticky-cta-button {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Small Mobile (320px - 375px) */
+@media (max-width: 375px) {
+    .hero-title {
         font-size: 1.75rem;
+    }
+
+    .description-line {
+        font-size: 0.95rem;
+    }
+
+    .download-card {
+        padding: var(--spacing-sm);
+    }
+
+    .checkbox-custom {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
     }
 }
 
