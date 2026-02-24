@@ -85,7 +85,6 @@ async function submitToAirtable(data, apiKey, baseId, tableName) {
                 'email': data.email,
                 'first_name': data.firstName,
                 'last_name': data.lastName || '',
-                'commitment': data.commitment ? 'Yes' : 'No',
                 'source': data.source,
                 'ip_address': data.ipAddress,
                 'submitted_at': data.timestamp
@@ -163,7 +162,7 @@ export default async function handler(req, res) {
         }
 
         // Parse and validate request body
-        const { email, firstName, lastName, commitment, source, timestamp, website } = req.body;
+        const { email, firstName, lastName, source, timestamp, website } = req.body;
 
         // Honeypot check - if 'website' field is filled, it's likely a bot
         if (website && website.trim().length > 0) {
@@ -176,9 +175,9 @@ export default async function handler(req, res) {
         }
 
         // Validate required fields
-        if (!email || !firstName || !source || commitment !== true) {
+        if (!email || !firstName || !source) {
             return res.status(400).json({
-                error: 'Missing required fields or commitment not confirmed'
+                error: 'Missing required fields'
             });
         }
 
@@ -229,7 +228,6 @@ export default async function handler(req, res) {
                 email: sanitizedEmail,
                 firstName: sanitizedFirstName,
                 lastName: sanitizedLastName,
-                commitment: commitment,
                 source: sanitizedSource,
                 timestamp: new Date().toISOString(),
                 ipAddress: clientIP
