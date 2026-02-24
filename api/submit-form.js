@@ -222,18 +222,6 @@ export default async function handler(req, res) {
             });
         }
 
-        // Validate timestamp to prevent replay attacks
-        const submissionTime = new Date(timestamp).getTime();
-        const currentTime = Date.now();
-        const timeDifference = Math.abs(currentTime - submissionTime);
-
-        // Reject if timestamp is more than 5 minutes old or in the future
-        if (timeDifference > 5 * 60 * 1000 || submissionTime > currentTime) {
-            return res.status(400).json({
-                error: 'Invalid submission timestamp'
-            });
-        }
-
         // Submit to Airtable
         const airtableResponse = await submitToAirtable(
             {
