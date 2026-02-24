@@ -1,0 +1,20 @@
+{
+  "name": "the-path-is-you-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page for The Path Is You audiobook by Juan Grey",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "landing-page",
+    "audiobook",
+    "self-discovery"
+  ],
+  "author": "Juan Grey",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}

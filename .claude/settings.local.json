@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: The Path Is You landing page\n\n- Cinematic landing page with hero section and parallax effects\n- Lead capture form with Airtable backend integration\n- Responsive design with elegant typography \\(Cormorant Garamond + Montserrat\\)\n- Real-time form validation \\(email, first name required, last name optional\\)\n- Vercel serverless function for secure Airtable integration\n- Source field automatically set to ''thepathisyou_audiobook''\n- WCAG AA accessibility compliant\n- Social proof testimonials section\n- Author bio section\n- Sticky mobile CTA\n- Performance optimized with smooth animations\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
