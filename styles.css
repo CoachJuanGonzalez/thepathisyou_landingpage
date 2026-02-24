@@ -137,6 +137,35 @@ body {
     letter-spacing: 0.05em;
 }
 
+.hero-description {
+    max-width: 650px;
+    margin: 0 auto var(--spacing-xl);
+    padding: 0 var(--spacing-md);
+}
+
+.description-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold-primary), transparent);
+    margin: var(--spacing-lg) auto;
+}
+
+.description-line {
+    font-family: var(--font-serif);
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 245, 245, 0.95);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.02em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.description-line:last-of-type {
+    margin-bottom: 0;
+}
+
 .cta-button-hero {
     display: inline-flex;
     align-items: center;
@@ -903,6 +932,14 @@ body {
 
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .hero-description {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .description-line {
+        font-size: 1.125rem;
     }
 
     .download-card {
