@@ -312,12 +312,12 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe benefit cards and testimonials
-document.querySelectorAll('.benefit-card, .testimonial-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(card);
+// Observe author section and form card for scroll animations
+document.querySelectorAll('.author-content, .download-card').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(element);
 });
 
 // ========================================

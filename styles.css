@@ -269,81 +269,48 @@ body {
 }
 
 /* ========================================
-   VALUE PROPOSITION SECTION
-   ======================================== */
-
-.value-section {
-    padding: var(--spacing-xxl) 0;
-    background: var(--color-black-secondary);
-}
-
-.section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
-    text-align: center;
-    color: var(--color-gold-primary);
-    margin-bottom: var(--spacing-xl);
-    letter-spacing: 0.05em;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-}
-
-.benefit-card {
-    background: var(--color-black-tertiary);
-    padding: var(--spacing-xl);
-    border-radius: 8px;
-    text-align: center;
-    transition: var(--transition-smooth);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.benefit-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
-}
-
-.benefit-icon {
-    margin-bottom: var(--spacing-md);
-}
-
-.benefit-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    color: var(--color-gold-secondary);
-    margin-bottom: var(--spacing-sm);
-    font-weight: 600;
-}
-
-.benefit-text {
-    font-size: 1rem;
-    color: var(--color-white-soft);
-    line-height: 1.8;
-}
-
-/* ========================================
    DOWNLOAD SECTION
    ======================================== */
 
 .download-section {
-    padding: var(--spacing-xxl) 0;
-    background: var(--color-black-primary);
+    padding: calc(var(--spacing-xxl) * 1.5) 0;
+    background: linear-gradient(180deg, var(--color-black-primary) 0%, var(--color-black-secondary) 50%, var(--color-black-primary) 100%);
+    position: relative;
+}
+
+.download-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .download-card {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     background: var(--color-black-secondary);
-    padding: var(--spacing-xl);
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: calc(var(--spacing-xl) * 1.5);
+    border-radius: 16px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-gold-primary), transparent);
+    opacity: 0.5;
 }
 
 .card-header {
@@ -944,11 +911,6 @@ body {
 
     .download-card {
         padding: var(--spacing-lg);
-    }
-
-    .benefits-grid,
-    .testimonials-grid {
-        grid-template-columns: 1fr;
     }
 
     .author-content {
