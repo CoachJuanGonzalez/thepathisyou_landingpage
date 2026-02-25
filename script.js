@@ -199,6 +199,9 @@ form.addEventListener('submit', async (e) => {
         form.style.display = 'none';
         successMessage.style.display = 'block';
 
+        // Open YouTube audiobook in new tab
+        window.open('https://youtu.be/VYpW6vGY2Ng', '_blank');
+
         // Track conversion (optional: add Google Analytics/Meta Pixel)
         if (window.gtag) {
             window.gtag('event', 'conversion', {
