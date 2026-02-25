@@ -176,6 +176,10 @@ form.addEventListener('submit', async (e) => {
         return;
     }
 
+    // CRITICAL: Open YouTube IMMEDIATELY within user interaction context
+    // This must happen BEFORE any async operations to bypass popup blockers
+    const audiobookWindow = window.open('https://youtu.be/VYpW6vGY2Ng', '_blank', 'noopener,noreferrer');
+
     // Disable button and show loading state
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
@@ -199,9 +203,6 @@ form.addEventListener('submit', async (e) => {
         form.style.display = 'none';
         successMessage.style.display = 'block';
 
-        // Open YouTube audiobook in new tab
-        window.open('https://youtu.be/VYpW6vGY2Ng', '_blank');
-
         // Track conversion (optional: add Google Analytics/Meta Pixel)
         if (window.gtag) {
             window.gtag('event', 'conversion', {
@@ -214,6 +215,11 @@ form.addEventListener('submit', async (e) => {
         // Scroll to success message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
+        // Close the audiobook window if submission failed
+        if (audiobookWindow && !audiobookWindow.closed) {
+            audiobookWindow.close();
+        }
+
         // Show error message
         alert(`There was an error submitting your request: ${result.error}\n\nPlease try again or contact support.`);
 
