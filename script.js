@@ -19,7 +19,6 @@ const stickyCta = document.getElementById('sticky-cta');
 // Form inputs
 const emailInput = document.getElementById('email');
 const firstNameInput = document.getElementById('firstName');
-const lastNameInput = document.getElementById('lastName');
 const commitmentInput = document.getElementById('commitment');
 
 // Error messages
@@ -188,7 +187,6 @@ form.addEventListener('submit', async (e) => {
     const formData = {
         email: emailInput.value.trim(),
         firstName: firstNameInput.value.trim(),
-        lastName: lastNameInput.value.trim() || '', // Optional field
         commitment: commitmentInput.checked, // Mandatory checkbox
         source: CONFIG.source,
         timestamp: new Date().toISOString(),
