@@ -319,8 +319,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe author section and form card for scroll animations
-document.querySelectorAll('.author-content, .download-card').forEach(element => {
+// Observe author section, form card, and physical book section for scroll animations
+document.querySelectorAll('.author-content, .download-card, .physical-book-layout, .physical-book-intro').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(30px)';
     element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
