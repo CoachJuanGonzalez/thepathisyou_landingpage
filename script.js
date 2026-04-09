@@ -4,7 +4,7 @@
 
 const CONFIG = {
     airtableApiUrl: '/api/submit-form', // Vercel serverless function endpoint
-    source: 'thepathisyou_audiobook'
+    source: 'thepathisyou_next_edition'
 };
 
 // ========================================
@@ -175,10 +175,6 @@ form.addEventListener('submit', async (e) => {
         return;
     }
 
-    // CRITICAL: Open YouTube IMMEDIATELY within user interaction context
-    // This must happen BEFORE any async operations to bypass popup blockers
-    const audiobookWindow = window.open('https://youtu.be/VYpW6vGY2Ng', '_blank', 'noopener,noreferrer');
-
     // Disable button and show loading state
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
@@ -187,7 +183,7 @@ form.addEventListener('submit', async (e) => {
     const formData = {
         email: emailInput.value.trim(),
         firstName: firstNameInput.value.trim(),
-        commitment: commitmentInput.checked, // Mandatory checkbox
+        commitment: commitmentInput.checked,
         source: CONFIG.source,
         timestamp: new Date().toISOString(),
         website: document.getElementById('website').value // Honeypot field
@@ -205,7 +201,7 @@ form.addEventListener('submit', async (e) => {
         if (window.gtag) {
             window.gtag('event', 'conversion', {
                 'event_category': 'Lead',
-                'event_label': 'Audiobook Download',
+                'event_label': 'Waitlist Signup',
                 'value': 1
             });
         }
@@ -213,11 +209,6 @@ form.addEventListener('submit', async (e) => {
         // Scroll to success message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
-        // Close the audiobook window if submission failed
-        if (audiobookWindow && !audiobookWindow.closed) {
-            audiobookWindow.close();
-        }
-
         // Show error message
         alert(`There was an error submitting your request: ${result.error}\n\nPlease try again or contact support.`);
 
@@ -232,11 +223,11 @@ form.addEventListener('submit', async (e) => {
 // ========================================
 
 function handleStickyCtaVisibility() {
-    const downloadSection = document.getElementById('download');
-    const downloadRect = downloadSection.getBoundingClientRect();
-    const isDownloadVisible = downloadRect.top < window.innerHeight && downloadRect.bottom > 0;
+    const physicalBookSection = document.getElementById('physical-book');
+    const physicalBookRect = physicalBookSection.getBoundingClientRect();
+    const isPhysicalBookVisible = physicalBookRect.top < window.innerHeight && physicalBookRect.bottom > 0;
 
-    if (window.scrollY > window.innerHeight && !isDownloadVisible && window.innerWidth <= 768) {
+    if (window.scrollY > window.innerHeight && !isPhysicalBookVisible && window.innerWidth <= 768) {
         stickyCta.classList.add('visible');
     } else {
         stickyCta.classList.remove('visible');
@@ -319,7 +310,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe author section, form card, and physical book section for scroll animations
+// Observe author section, waitlist card, and physical book section for scroll animations
 document.querySelectorAll('.author-content, .download-card, .physical-book-layout, .physical-book-intro').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(30px)';
@@ -396,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    console.log('The Path Is You - Landing Page Initialized');
+    console.log('The Path Is You - Physical Edition Landing Page Initialized');
 });
 
 // ========================================

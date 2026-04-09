@@ -216,7 +216,8 @@ export default async function handler(req, res) {
         }
 
         // Verify source matches expected value
-        if (sanitizedSource !== 'thepathisyou_audiobook') {
+        const validSources = ['thepathisyou_audiobook', 'thepathisyou_next_edition'];
+        if (!validSources.includes(sanitizedSource)) {
             return res.status(400).json({
                 error: 'Invalid form source'
             });
