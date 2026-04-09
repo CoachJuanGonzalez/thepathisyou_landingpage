@@ -113,7 +113,10 @@ export default async function handler(req, res) {
     const allowedOrigins = [
         'https://thepathisyou-landingpage.vercel.app',
         'http://localhost:3000', // For local development
-        'https://thepathisyou.com' // Add your custom domain if you have one
+        'https://thepathisyou.com',
+        'https://www.thepathisyou.com',
+        'https://pathisyou.com',
+        'https://www.pathisyou.com'
     ];
 
     const origin = req.headers.origin;
